@@ -1,349 +1,1129 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta name="robots" content="noindex, nofollow" />
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Event Success Plan｜国際会議の字幕を「失敗させない」専任サポート - Felo Subtitle</title>
-<meta name="description" content="50〜300名規模の国際会議向け。会前のデモ・機材設定・用語集登録から、当日のリモート常駐サポート、終了後のフォローまで。同時通訳より圧倒的に低コストで「イベントを成功させる」保証を。" />
+<meta charset="UTF-8"/>
+<meta name="robots" content="noindex, nofollow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>国際会議・カンファレンスでのAI同時通訳 | Felo Subtitle（プレビュー）</title>
+<meta name="description" content="Felo Subtitleは国際会議・カンファレンス・セミナーで活躍するAIリアルタイム翻訳ツール。20言語対応、専門用語辞書、AI議事録自動作成で同時通訳コストを最大80%削減。"/>
 <style>
-  :root{
-    --primary:#3B82F6; --primary-dark:#2563EB; --primary-light:#60A5FA;
-    --text-dark:#1F2937; --text-gray:#6B7280; --text-light:#F9FAFB;
-    --bg-light:#FFFFFF; --bg-gray:#F3F4F6; --bg-blue:#EFF6FF; --border:#E5E7EB;
-    --shadow-sm:0 1px 2px rgba(0,0,0,.05); --shadow-md:0 4px 6px -1px rgba(0,0,0,.1); --shadow-lg:0 10px 15px -3px rgba(0,0,0,.1);
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans','Noto Sans JP','Helvetica Neue',Arial,sans-serif;
-    line-height:1.7;color:var(--text-dark);background:var(--bg-light);-webkit-font-smoothing:antialiased;
-  }
-  a{color:var(--primary);text-decoration:none}
-  .container{max-width:1160px;margin:0 auto;padding:0 24px}
-  .section{padding:80px 0}
-  .section-gray{background:var(--bg-gray)}
-  .section-blue{background:var(--bg-blue)}
-  .eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);background:var(--bg-blue);padding:6px 14px;border-radius:999px;margin-bottom:18px}
-  h2.section-title{font-size:2.1rem;font-weight:800;text-align:center;letter-spacing:-.02em;margin-bottom:14px;color:var(--text-dark)}
-  .section-sub{text-align:center;color:var(--text-gray);font-size:1.05rem;max-width:680px;margin:0 auto 48px}
+/* CSS variables — scoped to .root */
+.root {
+  --primary-color: #3B82F6;
+  --primary-dark: #2563EB;
+  --primary-light: #60A5FA;
+  --text-dark: #1F2937;
+  --text-gray: #6B7280;
+  --text-light: #F9FAFB;
+  --bg-light: #FFFFFF;
+  --bg-gray: #F3F4F6;
+  --bg-blue: #EFF6FF;
+  --border-color: #E5E7EB;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+}
 
-  /* nav */
-  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--text-dark)}
-  .brand .dot{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--primary),var(--primary-light))}
-  .nav-links{display:flex;gap:28px;align-items:center}
-  .nav-links a{color:var(--text-gray);font-weight:600;font-size:.95rem}
-  .nav-links a:hover{color:var(--text-dark)}
-  .badge-preview{font-size:.7rem;background:#FEF3C7;color:#92400E;padding:3px 8px;border-radius:6px;font-weight:700}
+.root * { box-sizing: border-box; }
 
-  /* buttons */
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:8px;font-weight:700;font-size:1rem;cursor:pointer;border:none;transition:all .25s}
-  .btn-primary{background:var(--primary);color:#fff}
-  .btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:var(--shadow-md)}
-  .btn-secondary{background:transparent;color:var(--primary);border:2px solid var(--primary)}
-  .btn-secondary:hover{background:var(--bg-blue)}
+/* Buttons */
+.btn {
+  padding: 0.875rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+.btnPrimary {
+  background: var(--primary-color);
+  color: white;
+}
+.btnPrimary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.btnSecondary {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+.btnSecondary:hover { background: var(--bg-blue); }
 
-  /* hero */
-  .hero{position:relative;color:#fff;padding:148px 0 110px;overflow:hidden;
-    background-image:
-      linear-gradient(90deg,rgba(7,16,34,.94) 0%,rgba(8,18,40,.82) 36%,rgba(10,22,45,.55) 70%,rgba(10,22,45,.42) 100%),
-      url('event-hero.jpg');
-    background-size:cover;
-    background-position:center center;
-    background-repeat:no-repeat;
-    background-color:#0a162d;
-  }
-  .hero h1{font-size:3rem;font-weight:800;line-height:1.28;letter-spacing:-.02em;margin-bottom:20px;max-width:760px;text-shadow:0 2px 20px rgba(0,0,0,.3)}
-  .hero .lead{font-size:1.18rem;color:rgba(255,255,255,.92);max-width:640px;margin-bottom:34px}
-  .hero .cta{display:flex;gap:14px;flex-wrap:wrap}
-  .hero .btn-primary{background:#fff;color:var(--primary)}
-  .hero .btn-primary:hover{background:var(--bg-blue)}
-  .hero .btn-secondary{color:#fff;border-color:rgba(255,255,255,.85)}
-  .hero .btn-secondary:hover{background:rgba(255,255,255,.12)}
-  .hero-meta{display:flex;gap:30px;margin-top:42px;flex-wrap:wrap}
-  .hero-meta .item{}
-  .hero-meta .num{font-size:1.8rem;font-weight:800;line-height:1}
-  .hero-meta .lbl{font-size:.85rem;color:rgba(255,255,255,.7);margin-top:6px}
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 620px;
+  padding: 10rem 2rem 7rem;
+  background-image:
+    linear-gradient(135deg, rgba(10, 22, 45, 0.78) 0%, rgba(15, 32, 70, 0.55) 50%, rgba(10, 22, 45, 0.35) 100%),
+    url('https://subtitles.felo.me/assets/images/solutions/international-conference/hero-conference.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.heroContent { max-width: 1200px; margin: 0 auto; width: 100%; text-align: left; }
+.heroInner { max-width: 640px; }
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+  color: white;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+.heroSubtitle {
+  font-size: 1.125rem;
+  margin-bottom: 2.25rem;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.7;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+}
+.heroCta { display: flex; gap: 1rem; justify-content: flex-start; }
+.hero .btnPrimary {
+  background: white;
+  color: var(--primary-color);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+.hero .btnPrimary:hover { background: var(--bg-blue); }
+.hero .btnSecondary {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+}
+.hero .btnSecondary:hover { background: rgba(255, 255, 255, 0.12); }
 
-  /* pain grid */
-  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-  .pain-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px 22px;box-shadow:var(--shadow-sm)}
-  .pain-card .ico{font-size:1.8rem;margin-bottom:12px}
-  .pain-card h3{font-size:1.05rem;margin-bottom:8px}
-  .pain-card p{color:var(--text-gray);font-size:.92rem}
+/* Section base */
+.section { padding: 5rem 2rem; }
+.sectionGray { background: var(--bg-gray); }
+.container { max-width: 1200px; margin: 0 auto; }
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-dark);
+}
+.sectionSubtitle {
+  text-align: center;
+  color: var(--text-gray);
+  font-size: 1.05rem;
+  margin-top: -2rem;
+  margin-bottom: 3rem;
+}
+.sectionSubtitle a { color: var(--primary-color); font-weight: 600; }
 
-  /* timeline / included */
-  .phase{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .phase-col{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm)}
-  .phase-head{padding:22px 24px;color:#fff}
-  .phase-1 .phase-head{background:linear-gradient(135deg,#2563EB,#3B82F6)}
-  .phase-2 .phase-head{background:linear-gradient(135deg,#7C3AED,#A855F7)}
-  .phase-3 .phase-head{background:linear-gradient(135deg,#0891B2,#06B6D4)}
-  .phase-head .tag{font-size:.78rem;letter-spacing:.1em;opacity:.85;font-weight:700}
-  .phase-head h3{font-size:1.3rem;margin-top:4px}
-  .phase-body{padding:22px 24px}
-  .phase-body ul{list-style:none}
-  .phase-body li{position:relative;padding-left:26px;margin-bottom:14px;color:var(--text-dark);font-size:.96rem}
-  .phase-body li::before{content:"✓";position:absolute;left:0;top:0;color:var(--primary);font-weight:800}
-  .phase-body li span{display:block;color:var(--text-gray);font-size:.85rem;margin-top:2px}
+/* Pain Grid */
+.painGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.painCard {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.painCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+.painIcon {
+  width: 52px; height: 52px;
+  margin: 0 auto 1rem;
+  border-radius: 12px;
+  background: var(--bg-blue);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--primary-color);
+}
+.painIcon svg {
+  width: 24px; height: 24px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.painNumber {
+  display: inline-block;
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+.painCard h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-dark);
+}
+.painCard p {
+  color: var(--text-gray);
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
 
-  /* pricing */
-  .price-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
-  .price-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px 26px;display:flex;flex-direction:column;box-shadow:var(--shadow-sm)}
-  .price-card.featured{border:2px solid var(--primary);box-shadow:var(--shadow-lg);position:relative}
-  .price-card.featured .ribbon{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;font-size:.78rem;font-weight:700;padding:5px 16px;border-radius:999px}
-  .price-card h3{font-size:1.2rem;margin-bottom:6px}
-  .price-card .price{font-size:2.2rem;font-weight:800;color:var(--text-dark);margin:8px 0 2px}
-  .price-card .price small{font-size:.95rem;font-weight:600;color:var(--text-gray)}
-  .price-card .note{color:var(--text-gray);font-size:.85rem;margin-bottom:18px;min-height:38px}
-  .price-card ul{list-style:none;margin-bottom:24px;flex:1}
-  .price-card li{position:relative;padding-left:24px;margin-bottom:11px;font-size:.93rem}
-  .price-card li::before{content:"✓";position:absolute;left:0;color:var(--primary);font-weight:800}
-  .price-card .btn{width:100%}
+/* Feature rows */
+.featureRow {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  margin-bottom: 6rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.featureRow.reverse { grid-template-columns: 1fr 1.25fr; }
+.featureRow:last-child { margin-bottom: 0; }
+.featureRow.reverse .featureVisual { order: 2; }
+.featureVisual { aspect-ratio: 4 / 3; overflow: hidden; }
+.featureVisual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.featureLabel {
+  display: inline-block;
+  background: var(--bg-blue);
+  color: var(--primary-color);
+  padding: 0.375rem 0.875rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03em;
+}
+.featureContent h3 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
+.featureContent p {
+  color: var(--text-gray);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.025rem;
+}
+.featureLink a {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
 
-  /* addons table */
-  .table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--border)}
-  .table th,.table td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--border);font-size:.95rem}
-  .table th{background:var(--bg-gray);font-weight:700;color:var(--text-dark)}
-  .table td:last-child{font-weight:700;color:var(--text-dark);white-space:nowrap}
-  .table tr:last-child td{border-bottom:none}
+/* Accuracy hero + carousel */
+.accuracyHero {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: white;
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+  position: relative;
+  overflow: hidden;
+}
+.accuracyHero::before {
+  content: "";
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+  border-radius: 50%;
+}
+.accuracyHero::after {
+  content: "";
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+  border-radius: 50%;
+}
+.testimonialCarousel {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  min-height: 220px;
+  z-index: 1;
+}
+.testimonialSlide {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  pointer-events: none;
+  text-align: center;
+  padding: 0 1rem;
+}
+.testimonialSlide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.testimonialMark {
+  font-size: 3rem;
+  font-weight: 800;
+  opacity: 0.55;
+  line-height: 0.8;
+  margin-bottom: 1.25rem;
+}
+.testimonialQuote {
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+.testimonialAuthor {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+.testimonialDots {
+  display: flex;
+  justify-content: center;
+  gap: 0.625rem;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+.testimonialDot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+.testimonialDot.active {
+  background: white;
+  width: 32px;
+  border-radius: 5px;
+}
+.testimonialDot:hover { background: rgba(255, 255, 255, 0.55); }
+.testimonialDot.active:hover { background: white; }
 
-  /* comparison */
-  .cmp{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--border)}
-  .cmp th,.cmp td{padding:18px 20px;text-align:center;border-bottom:1px solid var(--border)}
-  .cmp th{background:var(--bg-gray);font-weight:700}
-  .cmp th.hl,.cmp td.hl{background:var(--bg-blue)}
-  .cmp td:first-child,.cmp th:first-child{text-align:left;font-weight:600}
-  .cmp .yes{color:#16A34A;font-weight:800}
-  .cmp .no{color:#DC2626;font-weight:800}
+/* Pillars */
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.pillarCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  position: relative;
+}
+.pillarCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+.pillarNumber {
+  position: absolute;
+  top: 1.5rem; right: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--bg-blue);
+  line-height: 1;
+}
+.pillarIcon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: var(--bg-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.625rem;
+  margin-bottom: 1.25rem;
+}
+.pillarTag {
+  display: inline-block;
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+.pillarCard h3 {
+  font-size: 1.175rem;
+  font-weight: 700;
+  margin-bottom: 0.875rem;
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+.pillarCard p {
+  color: var(--text-gray);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+.pillarCard p a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
 
-  /* faq */
-  .faq{max-width:820px;margin:0 auto}
-  details{background:#fff;border:1px solid var(--border);border-radius:12px;margin-bottom:14px;padding:0 22px;box-shadow:var(--shadow-sm)}
-  summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-weight:700;font-size:1.02rem}
-  summary::-webkit-details-marker{display:none}
-  summary .plus{color:var(--primary);font-size:1.4rem;transition:transform .2s}
-  details[open] summary .plus{transform:rotate(45deg)}
-  details p{padding:0 0 20px;color:var(--text-gray)}
+/* Scenarios */
+.scenariosGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.scenarioCard {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.35s, box-shadow 0.35s;
+  display: flex;
+  flex-direction: column;
+}
+.scenarioCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.28);
+}
+.scenarioHeader {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.scenarioHeader img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.scenarioCard:hover .scenarioHeader img { transform: scale(1.05); }
+.scenarioOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    rgba(37, 99, 235, 0.88) 0%,
+    rgba(37, 99, 235, 0.55) 50%,
+    rgba(15, 32, 70, 0.45) 100%);
+}
+.scenarioHeaderContent {
+  position: absolute;
+  inset: 0;
+  padding: 1.25rem 1.5rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 1;
+}
+.scenarioBadge {
+  display: inline-block;
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(4px);
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+.scenarioHeader h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.scenarioBody { padding: 1.75rem 1.5rem; flex: 1; }
+.scenarioFeatures { list-style: none; margin: 0; padding: 0; }
+.scenarioFeatures li {
+  padding: 0.5rem 0;
+  color: var(--text-gray);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+.scenarioFeatures li::before {
+  content: "·";
+  color: var(--text-gray);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
 
-  /* cta */
-  .cta-section{background:linear-gradient(135deg,#0a162d,#1e3a8a);color:#fff;text-align:center;padding:84px 0}
-  .cta-section h2{font-size:2.1rem;font-weight:800;margin-bottom:14px}
-  .cta-section p{color:rgba(255,255,255,.85);font-size:1.08rem;margin-bottom:30px}
-  .cta-section .btn-primary{background:#fff;color:var(--primary)}
-  .cta-section .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+/* Cases grid */
+.casesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.caseCard {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+.caseCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.caseCover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--bg-gray);
+}
+.caseCover img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.caseCard:hover .caseCover img { transform: scale(1.05); }
+.caseBody {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.caseMeta {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+.caseTag {
+  background: var(--bg-blue);
+  color: var(--primary-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.caseCard h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+.caseExcerpt {
+  color: var(--text-gray);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+.caseReadmore {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: auto;
+}
+.caseCard:hover .caseReadmore { gap: 0.5rem; }
 
-  footer{background:#0a0f1c;color:rgba(255,255,255,.55);padding:36px 0;text-align:center;font-size:.85rem}
+/* Modal */
+.caseModal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  overflow-y: auto;
+  padding: 2rem 1rem;
+}
+.caseModal.active { display: block; }
+.caseModalContent {
+  background: white;
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  animation: modalIn 0.3s ease-out;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.caseModalClose {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.caseModalClose:hover { background: rgba(0, 0, 0, 0.8); }
+.caseModalCover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--bg-gray);
+  display: block;
+}
+.caseModalBody { padding: 2.5rem; }
+.caseModalBody .caseMeta { margin-bottom: 1rem; }
+.caseModalBody h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+.caseSectionTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.caseModalBody p {
+  color: var(--text-dark);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.caseEffects {
+  background: var(--bg-gray);
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  margin-top: 0.5rem;
+}
+.caseEffects ul { list-style: none; margin: 0; padding: 0; }
+.caseEffects li {
+  padding: 0.5rem 0;
+  color: var(--text-dark);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.caseEffects li::before {
+  content: "✓";
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.caseQuote {
+  margin-top: 1rem;
+  padding: 1.25rem;
+  background: var(--bg-blue);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 8px;
+  font-style: italic;
+  color: var(--text-dark);
+}
+.caseQuoteAuthor {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-gray);
+  font-style: normal;
+}
 
-  @media(max-width:900px){
-    .grid-4{grid-template-columns:repeat(2,1fr)}
-    .phase,.price-wrap{grid-template-columns:1fr}
-    .nav-links{display:none}
-    .hero h1{font-size:2.1rem}
-    h2.section-title{font-size:1.7rem}
-    .table,.cmp{display:block;overflow-x:auto;white-space:nowrap}
-  }
+/* FAQ */
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.faqItem {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+}
+.faqItem summary {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faqItem summary::-webkit-details-marker { display: none; }
+.faqItem summary span:last-child {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 400;
+  transition: transform 0.2s;
+}
+.faqItem[open] summary span:last-child { transform: rotate(45deg); }
+.faqItem p {
+  margin-top: 1rem;
+  color: var(--text-gray);
+  line-height: 1.8;
+}
+
+/* CTA */
+.ctaSection {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+}
+.ctaSection h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.ctaSection p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+.ctaSection .heroCta { justify-content: center; }
+.ctaSection .btnPrimary {
+  background: white;
+  color: var(--primary-color);
+}
+.ctaSection .btnPrimary:hover {
+  background: var(--bg-blue);
+  transform: translateY(-2px);
+}
+.ctaSection .btnSecondary {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+.ctaSection .btnSecondary:hover { background: rgba(255,255,255,0.12); }
+
+/* Responsive */
+@media (max-width: 968px) {
+  .scenariosGrid { grid-template-columns: repeat(2, 1fr); }
+  .casesGrid { grid-template-columns: repeat(2, 1fr); }
+  .painGrid { grid-template-columns: repeat(2, 1fr); }
+  .featureRow { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 3.5rem; }
+  .featureRow.reverse .featureVisual { order: 0; }
+  .pillarsGrid { grid-template-columns: 1fr; }
+  .testimonialQuote { font-size: 1.1rem; }
+  .testimonialCarousel { min-height: 260px; }
+}
+@media (max-width: 768px) {
+  .hero { min-height: 480px; padding: 7rem 1.5rem 5rem; }
+  .hero h1 { font-size: 2rem; }
+  .heroCta { flex-direction: column; align-items: stretch; }
+  .btn { width: 100%; text-align: center; }
+  .scenariosGrid { grid-template-columns: 1fr; }
+  .casesGrid { grid-template-columns: 1fr; }
+  .caseModalBody { padding: 1.5rem; }
+  .painGrid { grid-template-columns: 1fr; }
+  .featureContent h3 { font-size: 1.5rem; }
+}
+
+
+/* ---- preview chrome ---- */
+.pvNav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border-color)}
+.pvNav .in{max-width:1200px;margin:0 auto;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem}
+.pvBrand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--text-dark)}
+.pvBrand .dot{width:20px;height:20px;border-radius:6px;background:linear-gradient(135deg,var(--primary-color),var(--primary-light))}
+.pvTag{font-size:.7rem;background:#FEF3C7;color:#92400E;padding:3px 8px;border-radius:6px;font-weight:700}
+.pvFoot{background:#0a0f1c;color:rgba(255,255,255,.55);padding:32px;text-align:center;font-size:.85rem}
+/* ---- Event Success Plan band ---- */
+.espBand{position:relative;padding:5.5rem 2rem;color:#fff;overflow:hidden;
+  background-image:linear-gradient(90deg,rgba(7,16,34,.93) 0%,rgba(8,18,40,.82) 45%,rgba(37,99,235,.55) 100%),url('https://subtitles.felo.me/assets/images/solutions/international-conference/hero-conference.jpg');
+  background-size:cover;background-position:center}
+.espInner{max-width:1100px;margin:0 auto}
+.espBadge{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.14em;background:rgba(255,255,255,.16);padding:6px 14px;border-radius:999px;margin-bottom:1.25rem}
+.espTitle{font-size:2.1rem;font-weight:800;line-height:1.35;margin-bottom:1rem;letter-spacing:-.01em}
+.espLead{font-size:1.05rem;color:rgba(255,255,255,.9);max-width:760px;line-height:1.8;margin-bottom:2.25rem}
+.espGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2.5rem}
+.espCard{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:1.5rem 1.4rem;backdrop-filter:blur(4px)}
+.espCard .espNum{font-size:.72rem;font-weight:700;letter-spacing:.12em;color:var(--primary-light);margin-bottom:.5rem}
+.espCard h3{font-size:1.15rem;font-weight:700;margin-bottom:.5rem}
+.espCard p{font-size:.92rem;color:rgba(255,255,255,.82);line-height:1.7}
+.espFooter{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.18);padding-top:1.75rem}
+.espPriceNum{font-size:2rem;font-weight:800}
+.espPriceUnit{font-size:.95rem;color:rgba(255,255,255,.78);margin-left:.4rem}
+.espBtn{background:#fff;color:var(--primary-color)}
+.espBtn:hover{background:var(--bg-blue);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+@media(max-width:968px){.espGrid{grid-template-columns:1fr}.espTitle{font-size:1.6rem}.pvNav .in{padding:0 1.25rem}}
+
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="nav">
-  <div class="container nav-inner">
-    <div class="brand"><span class="dot"></span>Felo Subtitle <span class="badge-preview">PREVIEW</span></div>
-    <div class="nav-links">
-      <a href="#included">サポート内容</a>
-      <a href="#pricing">料金</a>
-      <a href="#compare">同時通訳との比較</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact" class="btn btn-primary" style="padding:9px 18px;color:#fff">お問い合わせ</a>
-    </div>
+<nav class="pvNav"><div class="in">
+  <div class="pvBrand"><span class="dot"></span>Felo Subtitle <span class="pvTag">PREVIEW</span></div>
+  <div style="display:flex;gap:18px;align-items:center">
+    <a href="#event-plan" style="color:var(--primary-color);font-weight:700;text-decoration:none;font-size:.9rem">Event Success Plan ↓</a>
+    <a href="./event-success-plan.html" style="color:var(--text-gray);font-weight:600;text-decoration:none;font-size:.9rem">専用ページ →</a>
   </div>
-</nav>
-
-<!-- HERO -->
-<header class="hero">
-  <div class="container">
-    <span class="eyebrow" style="background:rgba(255,255,255,.14);color:#fff">Event Success Plan</span>
-    <h1>国際会議の字幕を、<br>「失敗させない」専任サポート。</h1>
-    <p class="lead">50〜300名規模の国際カンファレンスのために。会前の準備から当日のリモート常駐、終了後のフォローまで。お客様が買うのは字幕ツールではなく、<strong style="color:#fff">「イベントが成功する」という安心</strong>です。</p>
-    <div class="cta">
-      <a href="#pricing" class="btn btn-primary">料金プランを見る</a>
-      <a href="#contact" class="btn btn-secondary">無料で相談する</a>
+</div></nav>
+<div class="root">
+  <main>
+    
+<section class="hero">
+  <div class="heroContent"><div class="heroInner">
+    <h1>AI同時通訳で、通訳者なしの<br>20言語の国際会議を当日開催</h1>
+    <p class="heroSubtitle">同時通訳コストを最大80%削減。専門用語にも対応するAIリアルタイム字幕で、英語が話せなくても世界中の参加者とその場で議論できる。</p>
+    <div class="heroCta">
+      <a href="#" class="btn btnPrimary">資料を無料ダウンロード</a>
+      <a href="#contact" class="btn btnSecondary">お問い合わせ</a>
     </div>
-    <div class="hero-meta">
-      <div class="item"><div class="num">¥98,000〜</div><div class="lbl">1イベント（税抜）</div></div>
-      <div class="item"><div class="num">30分前〜</div><div class="lbl">開演前から全編リモート常駐</div></div>
-      <div class="item"><div class="num">同時通訳の<br>1/3以下</div><div class="lbl">トータルコスト</div></div>
-    </div>
-  </div>
-</header>
-
-<!-- PAIN -->
-<section class="section section-gray">
-  <div class="container">
-    <div style="text-align:center"><span class="eyebrow">こんな不安はありませんか</span></div>
-    <h2 class="section-title">字幕ツールを「入れただけ」では、当日が不安。</h2>
-    <p class="section-sub">国際会議は一度きりの本番。当日トラブルが起きてからでは取り返しがつきません。</p>
-    <div class="grid-4">
-      <div class="pain-card"><div class="ico">🎤</div><h3>機材・収音が不安</h3><p>会場の音響やマイク設定で、字幕の精度が大きく変わってしまう。</p></div>
-      <div class="pain-card"><div class="ico">📖</div><h3>専門用語が出ない</h3><p>会社名・製品名・登壇者名・業界用語が正しく表示されるか心配。</p></div>
-      <div class="pain-card"><div class="ico">⚠️</div><h3>当日トラブルが怖い</h3><p>本番中に不具合が起きても、自社スタッフだけでは対応しきれない。</p></div>
-      <div class="pain-card"><div class="ico">💴</div><h3>同時通訳は高すぎる</h3><p>通訳者は1言語あたり2名、機材も必要でコストが膨らむ。</p></div>
-    </div>
-  </div>
+  </div></div>
 </section>
-
-<!-- INCLUDED -->
-<section class="section" id="included">
+    
+<section class="section sectionGray">
   <div class="container">
-    <div style="text-align:center"><span class="eyebrow">サポート内容</span></div>
-    <h2 class="section-title">会前・当日・会後まで、専任チームが伴走。</h2>
-    <p class="section-sub">準備から本番、振り返りまで一気通貫。お客様は本来の運営に集中できます。</p>
-    <div class="phase">
-      <div class="phase-col phase-1">
-        <div class="phase-head"><div class="tag">BEFORE ／ 会前</div><h3>万全の準備</h3></div>
-        <div class="phase-body"><ul>
-          <li>デモ・操作レクチャー<span>リモートまたは現地でご説明</span></li>
-          <li>機材・マイク設定のご提案<span>会場環境に合わせた最適設定</span></li>
-          <li>用語集の登録代行<span>会社名・製品名・専門用語を事前登録</span></li>
-          <li>事前接続テスト（リハーサル）<span>本番前に1回の動作確認</span></li>
-        </ul></div>
+    <h2 class="sectionTitle">国際会議運営で、多くの企業が直面する4つの課題</h2>
+    <div class="painGrid">
+      
+      <div class="painCard">
+        <div class="painIcon">🔹</div>
+        <span class="painNumber">課題 01</span>
+        <h3>コストの壁</h3>
+        <p>通訳者1日10〜20万円、<br>年間数百万円の予算負担</p>
       </div>
-      <div class="phase-col phase-2">
-        <div class="phase-head"><div class="tag">LIVE ／ 当日</div><h3>リモート常駐</h3></div>
-        <div class="phase-body"><ul>
-          <li>開演30分前から待機<span>立ち上げ・最終チェックに同席</span></li>
-          <li>イベント中ずっとリモート監視<span>字幕の状態をリアルタイムで監視</span></li>
-          <li>トラブル時の即時対応<span>ネットワーク・収音・言語切替などに即応</span></li>
-        </ul></div>
+      <div class="painCard">
+        <div class="painIcon">🔹</div>
+        <span class="painNumber">課題 02</span>
+        <h3>言語の壁</h3>
+        <p>英語以外の参加者が<br>議論に加われない</p>
       </div>
-      <div class="phase-col phase-3">
-        <div class="phase-head"><div class="tag">AFTER ／ 会後</div><h3>確実なフォロー</h3></div>
-        <div class="phase-body"><ul>
-          <li>終了後の質問対応・振り返り<span>気になった点をしっかりフォロー</span></li>
-          <li>字幕・文字起こし記録の納品<span>議事録・記録の書き出し（ご希望に応じて）</span></li>
-        </ul></div>
+      <div class="painCard">
+        <div class="painIcon">🔹</div>
+        <span class="painNumber">課題 03</span>
+        <h3>記録の壁</h3>
+        <p>多言語議事録の作成に<br>数時間〜半日かかる</p>
+      </div>
+      <div class="painCard">
+        <div class="painIcon">🔹</div>
+        <span class="painNumber">課題 04</span>
+        <h3>プライバシーの壁</h3>
+        <p>機密会議でボット参加を<br>避けたいシーンがある</p>
       </div>
     </div>
   </div>
 </section>
-
-<!-- PRICING -->
-<section class="section section-gray" id="pricing">
+    
+<section class="section">
   <div class="container">
-    <div style="text-align:center"><span class="eyebrow">料金プラン</span></div>
-    <h2 class="section-title">1日まるごとの常駐サポートを標準で。</h2>
-    <p class="section-sub">基本プランは「当日1日（最大8時間）の全編サポート」込み。複数日・複数会場は追加で柔軟に対応します。</p>
-    <div class="price-wrap">
-      <div class="price-card">
-        <h3>Standard</h3>
-        <div class="price">¥98,000<small> 〜/場</small></div>
-        <div class="note">単日の国際会議に。最も選ばれる基本プラン。</div>
-        <ul>
-          <li>会前準備（デモ・機材提案・用語集・リハ）</li>
-          <li>当日1日のリモート全編サポート（≤8h）</li>
-          <li>会後フォロー</li>
-        </ul>
-        <a href="#contact" class="btn btn-secondary">このプランで相談</a>
-      </div>
-      <div class="price-card featured">
-        <span class="ribbon">おすすめ</span>
-        <h3>Pro</h3>
-        <div class="price">¥190,000<small> 〜/場</small></div>
-        <div class="note">最大3日間・分会場1つまで。大型カンファレンス向け。</div>
-        <ul>
-          <li>Standardの全内容</li>
-          <li>最大3日間のリモートサポート</li>
-          <li>分会場（1ルーム）対応</li>
-          <li>優先レスポンス</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary">このプランで相談</a>
-      </div>
-      <div class="price-card">
-        <h3>Enterprise</h3>
-        <div class="price">個別お見積</div>
-        <div class="note">複数日・複数会場・現地派遣・SLA保証など。</div>
-        <ul>
-          <li>複数日／複数分会場</li>
-          <li>現地派遣（オンサイト）サポート</li>
-          <li>SLA・専用用語・ブランド字幕</li>
-        </ul>
-        <a href="#contact" class="btn btn-secondary">お問い合わせ</a>
+    <h2 class="sectionTitle">Felo Subtitleがすべて解決します</h2>
+    
+    <div class="featureRow ">
+      <div class="featureVisual"><img src="https://subtitles.felo.me/assets/images/solutions/international-conference/feature-cost.jpg" alt="通訳者手配不要、コスト最大80%削減" loading="lazy"/></div>
+      <div class="featureContent">
+        <span class="featureLabel">01 · コストの壁を解決</span>
+        <h3>通訳者手配不要、コスト最大80%削減</h3>
+        <p>通訳者の手配・待機コストがゼロに。定額サブスクリプションで回数制限なく利用でき、複数言語の同時字幕表示にも追加費用はかかりません。月2回の国際会議なら、従来の同時通訳コスト比で年間180万円以上の削減が可能です。</p>
+        
       </div>
     </div>
-
-    <h3 style="text-align:center;margin:54px 0 22px;font-size:1.2rem">追加オプション</h3>
-    <table class="table">
-      <thead><tr><th>オプション</th><th>内容</th><th>料金（税抜）</th></tr></thead>
-      <tbody>
-        <tr><td>追加サポート日</td><td>2日目以降、1日あたりのリモート全編サポート</td><td>+¥50,000 / 日</td></tr>
-        <tr><td>時間超過</td><td>1日8時間を超えた分</td><td>+¥10,000 / 時</td></tr>
-        <tr><td>分会場・複数トラック</td><td>同時間帯に並行する会場を追加</td><td>+¥50,000 / 室・日</td></tr>
-        <tr><td>現地派遣（オンサイト）</td><td>エンジニア／CSが会場に同行（交通・宿泊は実費）</td><td>+¥150,000 / 日〜</td></tr>
-      </tbody>
-    </table>
-    <p style="text-align:center;color:var(--text-gray);font-size:.85rem;margin-top:16px">※ ソフトウェアライセンス料は別途。価格はすべて税抜の目安です。</p>
+    <div class="featureRow reverse">
+      <div class="featureVisual"><img src="https://subtitles.felo.me/assets/images/solutions/international-conference/feature-language.jpg" alt="20言語対応、リアルタイム翻訳字幕" loading="lazy"/></div>
+      <div class="featureContent">
+        <span class="featureLabel">02 · 言語の壁を解決</span>
+        <h3>20言語対応、リアルタイム翻訳字幕</h3>
+        <p>エンタープライズグレードの音声認識AIと最新LLMを組み合わせた独自のハイブリッド構成で、日英中韓露独仏西など20言語を自動認識。「逐語訳」＋「修正翻訳」の2段階処理で同時通訳レベルの精度を実現し、医療・法律・IT・製造など業界特有の専門用語にも対応します。</p>
+        <p class="featureLink"><a href="#">→ 英語会議を日本語字幕で理解する完全ガイド</a></p>
+      </div>
+    </div>
+    <div class="featureRow ">
+      <div class="featureVisual"><img src="https://subtitles.felo.me/assets/images/solutions/international-conference/feature-minutes.jpg" alt="AIが会議直後に多言語議事録を自動生成" loading="lazy"/></div>
+      <div class="featureContent">
+        <span class="featureLabel">03 · 記録の壁を解決</span>
+        <h3>AIが会議直後に多言語議事録を自動生成</h3>
+        <p>LLMによる話者識別・要約機能で、誰が何を言ったかを自動整理。客観的な会議要約・タスク抽出にも対応し、会議終了と同時に正確な議事録を多言語で共有できます。</p>
+        <p class="featureLink"><a href="#">→ 会議メモの取り方完全ガイド</a></p>
+      </div>
+    </div>
+    <div class="featureRow reverse">
+      <div class="featureVisual"><img src="https://subtitles.felo.me/assets/images/solutions/international-conference/feature-privacy.jpg" alt="ボット不参加のプライベート翻訳" loading="lazy"/></div>
+      <div class="featureContent">
+        <span class="featureLabel">04 · プライバシーの壁を解決</span>
+        <h3>ボット不参加のプライベート翻訳</h3>
+        <p>デスクトップ音声を直接キャプチャする独自技術で、会議にボットを参加させる必要がありません。参加者リストに不明なアカウントが表示されないため、経営会議やM&A協議など機密会議でも安心して利用できます。</p>
+        
+      </div>
+    </div>
   </div>
 </section>
-
-<!-- COMPARISON -->
-<section class="section" id="compare">
+    
+<section class="section">
   <div class="container">
-    <div style="text-align:center"><span class="eyebrow">他の手段との比較</span></div>
-    <h2 class="section-title">同時通訳より、ずっと手軽で多言語。</h2>
-    <p class="section-sub">「イベントが失敗しない」保証を、同時通訳のわずかな費用で。</p>
-    <table class="cmp">
-      <thead>
-        <tr><th>項目</th><th>同時通訳</th><th>速記・人手字幕</th><th class="hl">Felo Event Success Plan</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>1日あたりの費用目安</td><td>¥300,000〜¥1,000,000+</td><td>¥98,000〜¥300,000</td><td class="hl">ソフト＋¥98,000〜</td></tr>
-        <tr><td>対応言語数</td><td>通常1〜2言語/手配ごと</td><td>多くは単一言語</td><td class="hl"><span class="yes">数十言語に対応</span></td></tr>
-        <tr><td>専用機材・ブース</td><td><span class="no">必要</span></td><td>不要</td><td class="hl"><span class="yes">不要</span></td></tr>
-        <tr><td>記録（文字起こし）</td><td><span class="no">別途</span></td><td>△</td><td class="hl"><span class="yes">そのまま納品可</span></td></tr>
-        <tr><td>当日の専任サポート</td><td>通訳者のみ</td><td>速記者のみ</td><td class="hl"><span class="yes">リモート常駐で全体を監視</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section section-gray" id="faq">
-  <div class="container">
-    <div style="text-align:center"><span class="eyebrow">よくあるご質問</span></div>
-    <h2 class="section-title">FAQ</h2>
-    <div class="faq">
-      <details open><summary><span>ソフトウェアを自分たちで使えば十分では？</span><span class="plus">+</span></summary>
-        <p>ソフトはもちろんお使いいただけます。ただ国際会議は本番が一度きり。Event Success Planでは、開演前から本番中まで専任スタッフがリモートで常駐し、異常があればすぐに対応します。主催者の皆さまは運営に集中できます。</p></details>
-      <details><summary><span>料金 ¥98,000 には何が含まれますか？</span><span class="plus">+</span></summary>
-        <p>会前の準備（デモ・機材/マイク提案・用語集登録・リハーサル1回）、当日1日（最大8時間）のリモート全編サポート、会後のフォローまでが含まれます。ソフトウェアライセンスは別途です。</p></details>
-      <details><summary><span>イベントが複数日にわたる場合は？</span><span class="plus">+</span></summary>
-        <p>基本プランには1日分の全編サポートが含まれます。2日目以降は1日あたり ¥50,000 の追加で対応します。実際のスケジュールに合わせてお見積もりします。</p></details>
-      <details><summary><span>会場に来てもらうことはできますか？</span><span class="plus">+</span></summary>
-        <p>はい。現地派遣（オンサイト）オプションをご用意しています。1日 ¥150,000〜（交通・宿泊費は実費）で承ります。</p></details>
-      <details><summary><span>どのくらい前に申し込めばよいですか？</span><span class="plus">+</span></summary>
-        <p>準備とリハーサルの時間を確保するため、開催の2週間前までのお申し込みを推奨しています。直前のご相談も可能な範囲で対応します。</p></details>
+    <h2 class="sectionTitle">国際会議に求められる、業界最高水準の翻訳精度</h2>
+    <div class="accuracyHero" id="accHero">
+      <div class="testimonialCarousel">
+        
+        <div class="testimonialSlide active">
+          <div class="testimonialMark">&quot;</div>
+          <div class="testimonialQuote">会議議事録作成時間が大幅削減。翻訳精度が高く、海外チームとの会議がスムーズに進行しています。</div>
+          <div class="testimonialAuthor">— グローバル企業 プロジェクトマネージャー</div>
+        </div>
+        <div class="testimonialSlide ">
+          <div class="testimonialMark">&quot;</div>
+          <div class="testimonialQuote">専門用語が多い研究会議でも、ほぼ正確に文字起こしできるので非常に助かっています。</div>
+          <div class="testimonialAuthor">— 研究機関 研究者</div>
+        </div>
+        <div class="testimonialSlide ">
+          <div class="testimonialMark">&quot;</div>
+          <div class="testimonialQuote">国際会議で英語理解が困難でしたが、翻訳字幕でリアルタイムに把握でき、議論に積極参加できました。</div>
+          <div class="testimonialAuthor">— 国際機関 職員</div>
+        </div>
+      </div>
+      <div class="testimonialDots">
+        <button class="testimonialDot active" data-i="0"></button><button class="testimonialDot " data-i="1"></button><button class="testimonialDot " data-i="2"></button>
+      </div>
+    </div>
+    <div class="pillarsGrid">
+      
+      <div class="pillarCard">
+        <div class="pillarNumber">01</div>
+        <div class="pillarIcon">🎙️</div>
+        <span class="pillarTag">音声認識 × LLM</span>
+        <h3>エンタープライズ音声認識AI ×<br>最新LLMのハイブリッド構成</h3>
+        <p>エンタープライズグレードの音声認識AIをベースに、最新の大規模言語モデル（LLM）で文脈補正を実施。安定性と最新AI精度を両立した独自の2段構成で、ノイズの多い会場音声やアクセントのばらつきにも強い認識率を実現します。</p>
+      </div>
+      <div class="pillarCard">
+        <div class="pillarNumber">02</div>
+        <div class="pillarIcon">⚡</div>
+        <span class="pillarTag">翻訳アルゴリズム</span>
+        <h3>逐語訳＋修正翻訳の<br>2段階処理</h3>
+        <p>会話の流れを途切らせない高速な「逐語訳」と、文脈を踏まえて文章全体を再翻訳する「修正翻訳」を並行実行。スピードと正確性を両立させた、Felo独自の翻訳エンジンです。</p>
+      </div>
+      <div class="pillarCard">
+        <div class="pillarNumber">03</div>
+        <div class="pillarIcon">📖</div>
+        <span class="pillarTag">カスタマイズ</span>
+        <h3>業界特化の<br>専門用語辞書</h3>
+        <p>医療・法律・IT・製造・建設など業界特有の専門用語を事前登録可能。社名・商品名・略語も正確に翻訳されるため、業界会議・技術セッションでも誤訳を最小化します。</p>
+      </div>
     </div>
   </div>
 </section>
-
-<!-- CTA -->
-<section class="cta-section" id="contact">
+    
+<section class="section">
   <div class="container">
-    <h2>そのイベント、「成功」を前提に進めませんか。</h2>
-    <p>規模・日数・言語をお聞かせいただければ、最適なプランをご提案します。</p>
-    <div class="cta">
-      <a href="#" class="btn btn-primary">無料で相談する</a>
-      <a href="#pricing" class="btn btn-secondary" style="color:#fff;border-color:rgba(255,255,255,.85)">料金を確認する</a>
+    <h2 class="sectionTitle">Zoom・Teams・Webex に対応するAI同時通訳</h2>
+    <p class="sectionSubtitle">主要なWeb会議プラットフォームに幅広く対応。追加インストール不要で、すぐに使い始められます。</p>
+    <div class="pillarsGrid">
+      
+      <div class="pillarCard">
+        <div class="pillarIcon">📹</div>
+        <span class="pillarTag">Zoom 翻訳</span>
+        <h3>Zoom ミーティングに対応</h3>
+        <p>Zoomミーティングでリアルタイム翻訳字幕を表示。ボット不参加のプライベートモードにも対応し、参加者リストにボットが表示されません。<br/><a href="#">→ Zoom 設定の詳しい使い方はこちら</a></p>
+      </div>
+      <div class="pillarCard">
+        <div class="pillarIcon">👥</div>
+        <span class="pillarTag">Teams 翻訳</span>
+        <h3>Microsoft Teams に対応</h3>
+        <p>Microsoft Teams 会議で日英中韓など20言語の同時翻訳を実現。社内グローバル会議の言語の壁を解消します。<br/><a href="#">→ Teams 翻訳機能の使い方ガイド</a></p>
+      </div>
+      <div class="pillarCard">
+        <div class="pillarIcon">🖥️</div>
+        <span class="pillarTag">Webex / Google Meet</span>
+        <h3>Webex・Google Meet にも対応</h3>
+        <p>主要なWeb会議ツールに幅広く対応。画面共有中もリアルタイム字幕を表示できます。<br/><a href="#">→ Webex 文字起こしガイド</a>　/　<br/><a href="#">Google Meet 字幕ガイド</a></p>
+      </div>
     </div>
   </div>
 </section>
-
-<footer>
-  © Sparticle Inc. — Felo Subtitle｜Event Success Plan（社内レビュー用プレビュー）
-</footer>
-
+    
+<section class="section sectionGray">
+  <div class="container">
+    <h2 class="sectionTitle">対面・オンライン・大規模イベント、すべての形式に対応</h2>
+    <p class="sectionSubtitle">多言語会議を成功させるための詳しい運営ノウハウは、<a href="#">多言語会議の運営コツ完全ガイド</a>で解説しています。</p>
+    <div class="scenariosGrid">
+      
+      <div class="scenarioCard">
+        <div class="scenarioHeader">
+          <img src="https://subtitles.felo.me/assets/images/solutions/international-conference/scene-online.jpg" alt="シーン 01" loading="lazy"/>
+          <div class="scenarioOverlay"></div>
+          <div class="scenarioHeaderContent">
+            <span class="scenarioBadge">シーン 01</span>
+            <h3>海外拠点との<br>オンライン会議</h3>
+          </div>
+        </div>
+        <div class="scenarioBody"><ul class="scenarioFeatures"><li>Zoom / Teams / Google Meet / Webex に対応</li><li>1対1から複数メンバーまで対応</li><li>会議中の字幕共有リンク発行</li><li>会議後の議事録・タスク自動抽出</li><li>ボット不参加のプライベート翻訳</li></ul></div>
+      </div>
+      <div class="scenarioCard">
+        <div class="scenarioHeader">
+          <img src="https://subtitles.felo.me/assets/images/solutions/international-conference/scene-seminar.jpg" alt="シーン 02" loading="lazy"/>
+          <div class="scenarioOverlay"></div>
+          <div class="scenarioHeaderContent">
+            <span class="scenarioBadge">シーン 02</span>
+            <h3>講演・セミナーでの<br>同時通訳字幕</h3>
+          </div>
+        </div>
+        <div class="scenarioBody"><ul class="scenarioFeatures"><li>スクリーンにリアルタイム字幕を投影</li><li>参加者はスマホでも視聴可能</li><li>複数言語話者が同時に参加可能</li><li>20言語に対応・多国籍参加可能</li></ul></div>
+      </div>
+      <div class="scenarioCard">
+        <div class="scenarioHeader">
+          <img src="https://subtitles.felo.me/assets/images/solutions/international-conference/scene-conference.jpg" alt="シーン 03" loading="lazy"/>
+          <div class="scenarioOverlay"></div>
+          <div class="scenarioHeaderContent">
+            <span class="scenarioBadge">シーン 03</span>
+            <h3>国際カンファレンス・<br>イベント</h3>
+          </div>
+        </div>
+        <div class="scenarioBody"><ul class="scenarioFeatures"><li>複数会場での同時運用可能</li><li>ライブ配信での同時翻訳対応</li><li>専門用語の正確な翻訳</li><li>会議後の要約・文字起こしを自動生成</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+    
+<section class="section">
+  <div class="container">
+    <h2 class="sectionTitle">国際会議での導入事例</h2>
+    <div class="casesGrid">
+      
+      <a class="caseCard" href="#">
+        <div class="caseCover"><img src="https://subtitles.felo.me/assets/images/solutions/international-conference/case-fukuoka-2.jpg" alt="World Workation Conference in 福岡" loading="lazy"/></div>
+        <div class="caseBody">
+          <div class="caseMeta"><span class="caseTag">自治体・観光</span><span class="caseTag">国際カンファレンス</span></div>
+          <h3>World Workation Conference in 福岡</h3>
+          <p class="caseExcerpt">福岡市主催の国際カンファレンスで、福岡市長スピーチを含む複数セッションにFelo Subtitleを採用。高精度なAI同時通訳字幕により、海外ゲストとの双方向コミュニケーションを実現しました。会議での活用実績が評価され、現在は福岡空港・博多駅の観光案内所にもFelo Translatorを展開し、訪日観光客対応にも活用されています(株式会社QTnet経由で提供)。</p>
+          <span class="caseReadmore">詳しく見る →</span>
+        </div>
+      </a>
+      <a class="caseCard" href="#">
+        <div class="caseCover"><img src="https://subtitles.felo.me/assets/images/solutions/international-conference/case-ssou-jcom-1.jpg" alt="JCOM 浅草サンバカーニバル 英語ライブ" loading="lazy"/></div>
+        <div class="caseBody">
+          <div class="caseMeta"><span class="caseTag">メディア・放送</span><span class="caseTag">ライブ配信</span></div>
+          <h3>JCOM 浅草サンバカーニバル 英語ライブ</h3>
+          <p class="caseExcerpt">JCOM社「浅草サンバカーニバル」英語ライブ放送にて、Felo Subtitleをリアルタイム英語字幕生成ツールとして採用。日本の伝統文化イベントを世界中の視聴者に英語で発信する体制を実現し、字幕生成の人的コストを大幅に削減。国際向けライブ配信の標準ツールとして継続利用中です。</p>
+          <span class="caseReadmore">詳しく見る →</span>
+        </div>
+      </a>
+      <a class="caseCard" href="#">
+        <div class="caseCover"><img src="https://subtitles.felo.me/assets/images/solutions/international-conference/case-medical.jpg" alt="先進医療学会での同時通訳" loading="lazy"/></div>
+        <div class="caseBody">
+          <div class="caseMeta"><span class="caseTag">医療・研究</span><span class="caseTag">国際学会</span></div>
+          <h3>先進医療学会での同時通訳</h3>
+          <p class="caseExcerpt">褥瘡・インシデント・ADL・ゲノム医療など高度な医療専門用語が多数登場する国際学会。AIとゲノム情報を用いた未来医療をテーマとする特別講演でも、専門用語辞書の事前登録により高精度な文字起こしと多言語翻訳を実現しました。「専門用語が多い研究会議でも、ほぼ正確に文字起こしできる」との評価をいただいています。</p>
+          <span class="caseReadmore">詳しく見る →</span>
+        </div>
+      </a>
+      <a class="caseCard" href="#">
+        <div class="caseCover"><img src="https://subtitles.felo.me/assets/images/solutions/international-conference/case-teamz.jpg" alt="Teamz Summit 2025" loading="lazy"/></div>
+        <div class="caseBody">
+          <div class="caseMeta"><span class="caseTag">テック・Web3</span><span class="caseTag">国際カンファレンス</span></div>
+          <h3>Teamz Summit 2025</h3>
+          <p class="caseExcerpt">アジア最大級のブロックチェーン・Web3カンファレンスにて、複数セッションで同時通訳字幕を提供。日本語・英語・中国語・韓国語の4言語を同時処理し、グローバル参加者が母国語で最新技術トレンドを理解できる環境を構築。Web3・ブロックチェーン特有の専門用語にも対応しました。</p>
+          <span class="caseReadmore">詳しく見る →</span>
+        </div>
+      </a>
+      <a class="caseCard" href="#">
+        <div class="caseCover"><img src="https://subtitles.felo.me/assets/images/solutions/international-conference/case-ssou-jcom-2.jpg" alt="S創 上海・北京サミット" loading="lazy"/></div>
+        <div class="caseBody">
+          <div class="caseMeta"><span class="caseTag">スタートアップ</span><span class="caseTag">日中カンファレンス</span></div>
+          <h3>S創 上海・北京サミット</h3>
+          <p class="caseExcerpt">9月の上海会場(5会場同時開催)でFelo字幕を採用し、大型スクリーンに中英日多言語字幕を投影。好評により10月の北京会場でも継続採用され、S創オフィシャル翻訳ツールに認定。日中間の大規模スタートアップイベントにおける標準ツールとして定着しています。</p>
+          <span class="caseReadmore">詳しく見る →</span>
+        </div>
+      </a>
+      <a class="caseCard" href="#">
+        <div class="caseCover"><img src="https://subtitles.felo.me/assets/images/solutions/international-conference/case-telecom.jpg" alt="某大手通信企業 上海カンファレンス" loading="lazy"/></div>
+        <div class="caseBody">
+          <div class="caseMeta"><span class="caseTag">通信業</span><span class="caseTag">日中カンファレンス</span></div>
+          <h3>某大手通信企業 上海カンファレンス</h3>
+          <p class="caseExcerpt">上海で開催された日中合同カンファレンスにて、日中・中日のリアルタイム翻訳ツールとして採用。大型スクリーンにリアルタイム字幕を投影し、現地参加者とオンライン参加者の双方向同時通訳を実現。翻訳精度満足度100%・同時通訳コスト80%削減を達成し、現在は日中間の社用ツールとして全社展開されています。</p>
+          <span class="caseReadmore">詳しく見る →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+    
+<section class="espBand" id="event-plan">
+  <div class="container espInner">
+    <span class="espBadge">EVENT SUCCESS PLAN</span>
+    <h2 class="espTitle">ツールだけでなく、<br/>当日の運営まで「専任チーム」が伴走。</h2>
+    <p class="espLead">50〜300名規模の国際会議を、確実に成功させたい方へ。会前の準備から当日のリモート常駐、終了後のフォローまでを専任チームがサポートする <strong>Event Success Plan</strong> をご用意しています。</p>
+    <div class="espGrid">
+      <div class="espCard"><div class="espNum">BEFORE</div><h3>会前準備</h3><p>デモ・機材／マイク設定提案・専門用語の事前登録・リハーサル</p></div>
+      <div class="espCard"><div class="espNum">LIVE</div><h3>当日リモート常駐</h3><p>開演30分前から待機し、イベント中ずっと字幕状態を監視・即時対応</p></div>
+      <div class="espCard"><div class="espNum">AFTER</div><h3>会後フォロー</h3><p>終了後の質問対応・振り返り、字幕／議事録の納品</p></div>
+    </div>
+    <div class="espFooter">
+      <div class="espPrice"><span class="espPriceNum">¥98,000</span><span class="espPriceUnit">〜 / 場（税抜）・1日全編サポート込み</span></div>
+      <a href="./event-success-plan.html" class="btn espBtn">Event Success Plan の詳細を見る →</a>
+    </div>
+  </div>
+</section>
+    
+<section class="section sectionGray">
+  <div class="container">
+    <h2 class="sectionTitle">よくあるご質問</h2>
+    <div class="faqList">
+      
+      <details class="faqItem"><summary><span>対応しているWeb会議プラットフォームは？</span><span>+</span></summary><p>Zoom、Microsoft Teams、Google Meet、Webex など主要なWeb会議プラットフォームに対応しています。追加インストール不要で、すぐに使い始められます。デスクトップ音声を直接キャプチャする独自方式のため、各プラットフォームのアップデートにも影響を受けにくい設計です。</p></details>
+      <details class="faqItem"><summary><span>同時通訳コストはどのくらい削減できますか？</span><span>+</span></summary><p>従来の人の同時通訳に比べ、最大80%のコスト削減が可能です。通訳者の手配費用・待機費用が不要になり、定額サブスクリプションで回数制限なくご利用いただけます。月2回の国際会議なら年間180万円以上の削減実績があります。</p></details>
+      <details class="faqItem"><summary><span>機密会議でも使えますか？</span><span>+</span></summary><p>はい、ボット不参加のプライベート翻訳モードに対応しています。会議にボットや不明なアカウントが表示されないため、経営会議やM&A協議など機密会議でも安心してご利用いただけます。</p></details>
+      <details class="faqItem"><summary><span>専門用語の翻訳精度は？</span><span>+</span></summary><p>医療・法律・IT・製造・建設など業界特有の専門用語を事前登録できる専門用語辞書機能を搭載。社名・商品名・略語も正確に翻訳され、業界会議・技術セッションでも誤訳を最小化します。</p></details>
+    </div>
+  </div>
+</section>
+    
+<section class="ctaSection" id="contact">
+  <h2>国際会議での導入をご検討の方へ</h2>
+  <p>貴社の国際会議での活用方法を、具体的にご提案します。</p>
+  <div class="heroCta">
+    <a href="#" class="btn btnPrimary">資料を無料ダウンロード</a>
+    <a href="#" class="btn btnSecondary">お問い合わせ</a>
+  </div>
+</section>
+  </main>
+</div>
+<footer class="pvFoot">© Sparticle Inc. — Felo Subtitle｜国際会議ソリューション（社内レビュー用プレビュー・新「Event Success Plan」区块入り）</footer>
+<script>
+// testimonial carousel
+(function(){
+  var slides=document.querySelectorAll('.testimonialSlide');
+  var dots=document.querySelectorAll('.testimonialDot');
+  if(!slides.length)return;var cur=0,timer=null;
+  function go(n){cur=(n+slides.length)%slides.length;
+    slides.forEach(function(s,i){s.classList.toggle('active',i===cur)});
+    dots.forEach(function(d,i){d.classList.toggle('active',i===cur)});}
+  function start(){stop();timer=setInterval(function(){go(cur+1)},5500)}
+  function stop(){if(timer){clearInterval(timer);timer=null}}
+  dots.forEach(function(d){d.addEventListener('click',function(){go(+d.dataset.i);start()})});
+  var hero=document.getElementById('accHero');
+  if(hero){hero.addEventListener('mouseenter',stop);hero.addEventListener('mouseleave',start);}
+  start();
+})();
+</script>
 </body>
 </html>
